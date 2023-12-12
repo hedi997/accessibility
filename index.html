@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="openModal" id="openModal">Öppna</button>
+
+    <div
+      aria-describedby="description"
+      aria-labelledby="modalTitle"
+      role="dialog"
+      class="accessibleModal"
+      id="accessibleModal"
+    >
+      <h2 id="modalTitle">Exempel på modalfönster</h2>
+      <p id="description">Här är lite text i modalfönstret.</p>
+      <button id="closeModalBtn">Stäng</button>
+    </div>
+
+    <button class="openDialog" id="openDialog">Öppna</button>
+
+    <dialog id="accessibleDialog">
+      <h2>Exempel på tillgängligt modalfönster med &lt;dialog&gt;</h2>
+      <p>Här är innehållet i modalfönstret.</p>
+      <button id="closeDialogBtn">Stäng</button>
+    </dialog>
+    <button aria-haspopup="menu" aria-expanded="false" id="menuButton">
+      Meny
+    </button>
+    <nav aria-controls="menuButton" id="menuContent" class="menuContent">
+      <ul>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Tjänster</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Fördelarna med att använda dialog att det lättare går att öppna och stänga fönstret med attributen showmodal() och
+close() och att den redan kommer designad som en pop up, med border och centrering på sidan. 
+Den störta fördelen är att man inte behöver använda några aria roles, states eller propertys för att få voiceOver att fungera. -->
